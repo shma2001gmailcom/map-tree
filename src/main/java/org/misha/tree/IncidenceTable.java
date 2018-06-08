@@ -58,7 +58,12 @@ class IncidenceTable<T> {
     }
 
     int nodesCount() {
-        return nodes.size();
+        try {
+            lock.readLock().lock();
+            return nodes.size();
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     List<Node<T>> children(final Node<T> node) {
