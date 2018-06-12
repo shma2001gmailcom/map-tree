@@ -12,7 +12,7 @@ public class Node<T> {
     private T data;
     private final int id;
 
-    private Node(final IncidenceTable<T> table, final T data, final int id) {
+    Node(final IncidenceTable<T> table, final T data, final int id) {
         this.table = table;
         this.data = data;
         this.id = id;
